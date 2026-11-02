@@ -1,10 +1,31 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 # Pixel Siege
 
-A retro top-down shooter for the browser. The player moves with the arrow keys or WASD, aims with the mouse, and clicks or holds to shoot. There are 6 levels, ending in a boss fight. Plain HTML5 canvas and JavaScript: no libraries, no build step, no assets on disk.
+A retro top-down shooter for the browser. The player moves with the arrow keys or WASD, aims with the mouse, and clicks or holds to shoot. There are 6 levels, ending in a boss fight. Plain HTML5 canvas and JavaScript: no libraries, no build step, no package manager, no assets on disk.
 
 ## Running
 
-Open `index.html` in a browser (double-click works). Everything works offline.
+Open `index.html` in a browser (double-click works, or run `start index.html` in PowerShell). Everything works offline. There is no build, lint or test tooling, and Node is not installed on this machine.
+
+## Testing headlessly
+
+There's no test suite. Every function and object is a global (`G`, `update`, `render`, `startLevel`, `beginPlay`, `hurtPlayer`, `Input`, `STEP`, `LEVELS`, `SPR` …), so a throwaway HTML page can load the scripts by absolute `file:///` path and drive the game synchronously:
+
+- **Advance time:** loop `update(STEP); render(); Input.endStep();`.
+- **Fake input:** set `Input.mx`/`Input.my`, `Input.mouseDown`, `Input.keys.add('ArrowLeft')` or `Input.pressed.add('Enter')`.
+- **Report results:** write them into the DOM.
+- **Catch errors:** install `window.onerror` before the scripts load.
+
+Run the page with Microsoft Edge (Chrome isn't installed):
+
+```
+"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --disable-gpu --allow-file-access-from-files --user-data-dir=<scratch dir> --virtual-time-budget=10000 --dump-dom "file:///C:/path/to/harness.html"
+```
+
+Swap `--dump-dom` for `--screenshot=<file>.png --window-size=W,H` to look at the rendered canvas. Use a scratch `--user-data-dir` so test runs don't touch your real saved high score. Keep harness pages out of the repo.
 
 ## Files
 
@@ -45,3 +66,10 @@ Scripts are classic `<script>` tags, not ES modules, so the game runs from `file
 - **Sprites:** each character in a grid maps to a color in that sprite's palette. `.` and any character missing from the palette are transparent. Keep every row the same width.
 - **Text:** `drawText` only renders characters defined in `FONT` (A–Z, 0–9 and `: / ! - . + > < , ? '`). Add a glyph before using a new character.
 - **Coordinates:** everything is in 320x180 game pixels. Round positions when drawing to keep pixels crisp.
+
+## Git and GitHub
+
+- **Remote:** this repo is pushed to the private GitHub repo https://github.com/newbie-1010/pixel-siege (remote `origin`, branch `main`).
+- **Workflow:** commit every change with a clean message (an imperative subject line, then a short body explaining why) and push it straight away.
+- **GitHub CLI:** `gh` lives at `C:\Program Files\GitHub CLI\gh.exe` and may not be on the bash PATH. It's also git's credential helper.
+- **Line endings:** `.gitattributes` stores text files with LF endings, so Windows "LF will be replaced by CRLF" warnings are expected and harmless.
