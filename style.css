@@ -1,0 +1,19 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #0d0e17;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  cursor: none; /* the game draws its own crosshair */
+  background: #1a1c2c;
+}
