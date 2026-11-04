@@ -34,6 +34,12 @@ const Input = {
       if (this.onBlur) this.onBlur();
     });
 
+    // When embedded in an iframe (itch.io), keys only reach us once our window has focus.
+    // preventDefault() on mousedown blocks the browser's own focus change, so take focus
+    // by hand on any click, including clicks on the letterbox around the canvas.
+    addEventListener('mousedown', () => window.focus());
+    window.focus();
+
     addEventListener('mousemove', e => { toGame(e); this.moved = true; });
     canvas.addEventListener('mousedown', e => {
       if (e.button !== 0) return;

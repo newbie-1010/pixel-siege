@@ -2,7 +2,7 @@
 // Shared constants and tiny helpers used by every other script.
 
 // Release version, shown on the menu. Bump it for every published build.
-const VERSION = '1.0.0';
+const VERSION = '1.0.1';
 
 // Internal resolution. The canvas is scaled up by whole-number steps in game.js.
 const W = 320;
