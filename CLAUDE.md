@@ -69,7 +69,7 @@ Scripts are classic `<script>` tags, not ES modules, so the game runs from `file
 
 ## Git and GitHub
 
-- **Remote:** this repo is pushed to the private GitHub repo https://github.com/newbie-1010/pixel-siege (remote `origin`, branch `main`).
+- **Remote:** this repo is pushed to the public GitHub repo https://github.com/newbie-1010/pixel-siege (remote `origin`, branch `main`).
 - **Workflow:** commit every change with a clean message (an imperative subject line, then a short body explaining why) and push it straight away.
 - **GitHub CLI:** `gh` lives at `C:\Program Files\GitHub CLI\gh.exe` and may not be on the bash PATH. It's also git's credential helper.
 - **Line endings:** `.gitattributes` stores text files with LF endings, so Windows "LF will be replaced by CRLF" warnings are expected and harmless.
