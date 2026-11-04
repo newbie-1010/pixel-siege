@@ -2,7 +2,7 @@
 
 A retro top-down pixel-art shooter for the browser, **developed by [newbie-1010](https://github.com/newbie-1010)**.
 
-**Play it:** https://newbie-1010.github.io/pixel-siege/ (an itch.io page is coming soon)
+**Play it:** [itch.io](https://newbie-1010.itch.io/pixel-siege) · [GitHub Pages](https://newbie-1010.github.io/pixel-siege/)
 
 Fight through 6 levels of slimes, bats, skeletons and brutes, then take on the Warlord. The game runs on plain HTML5 canvas and JavaScript, with no downloads and no plugins.
 
