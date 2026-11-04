@@ -73,3 +73,11 @@ Scripts are classic `<script>` tags, not ES modules, so the game runs from `file
 - **Workflow:** commit every change with a clean message (an imperative subject line, then a short body explaining why) and push it straight away.
 - **GitHub CLI:** `gh` lives at `C:\Program Files\GitHub CLI\gh.exe` and may not be on the bash PATH. It's also git's credential helper.
 - **Line endings:** `.gitattributes` stores text files with LF endings, so Windows "LF will be replaced by CRLF" warnings are expected and harmless.
+
+## Publishing
+
+- **Developer credit:** the game is by `newbie-1010`, and that name appears on the menu and the victory screen. It's all rights reserved (see `LICENSE`), and every source file starts with a copyright line.
+- **Version:** `VERSION` in `js/config.js` is shown on the menu. Bump it for every published build.
+- **GitHub Pages:** https://newbie-1010.github.io/pixel-siege/ is served from `main` / root. `.nojekyll` makes Pages serve the files as they are. Each push redeploys it.
+- **itch.io:** upload a zip that has only `index.html`, `style.css` and `js/` at its root. Build it outside the repo, for example in PowerShell: `Compress-Archive -Path index.html, style.css, js -DestinationPath $env:TEMP\pixel-siege-<version>.zip -Force`. On itch, set the viewport to 960x540 (3x), turn the fullscreen button on and leave mobile-friendly off.
+- **Git identity:** commits use the GitHub noreply email. Never commit with a work email.

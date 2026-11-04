@@ -1,3 +1,4 @@
+// Pixel Siege (c) 2026 newbie-1010. All rights reserved.
 // Game states, main loop, collisions, HUD and screens.
 //
 // States: MENU -> INTRO -> PLAYING -> CLEAR -> INTRO (next level) ... -> VICTORY
@@ -455,6 +456,7 @@ function drawMenu() {
   drawText(ctx, 'PIXEL', x0, 16, '#ffcd75', 3, 'left', '#1a1c2c');
   drawText(ctx, 'SIEGE', x0 + 6 * 6 * 3, 16, '#ef7d57', 3, 'left', '#1a1c2c');
   drawText(ctx, 'A RETRO TOP-DOWN SHOOTER', W / 2, 40, '#94b0c2', 1, 'center');
+  drawText(ctx, 'BY NEWBIE-1010', W / 2, 50, '#ef7d57', 1, 'center', '#1a1c2c');
 
   // Hero, walking in place, gun tracking the mouse
   const hx = 52, hy = 96;
@@ -476,6 +478,7 @@ function drawMenu() {
   drawText(ctx, 'ARROWS / WASD: MOVE    MOUSE: AIM', W / 2, 130, '#94b0c2', 1, 'center');
   drawText(ctx, 'CLICK OR HOLD: SHOOT    P: PAUSE    M: SOUND', W / 2, 140, '#94b0c2', 1, 'center');
   drawText(ctx, 'HI SCORE ' + Save.data.hi, W / 2, 162, '#ffcd75', 1, 'center', '#1a1c2c');
+  drawText(ctx, 'V' + VERSION, W - 4, H - 8, '#566c86', 1, 'right');
 }
 
 function drawWorld() {
@@ -577,6 +580,7 @@ function render() {
       drawText(ctx, 'THE WARLORD IS DEFEATED', W / 2, 66, '#f4f4f4', 1, 'center', '#1a1c2c');
       drawText(ctx, 'FINAL SCORE ' + G.score, W / 2, 86, '#f4f4f4', 1, 'center', '#1a1c2c');
       drawText(ctx, 'HI SCORE ' + Save.data.hi, W / 2, 98, '#ffcd75', 1, 'center', '#1a1c2c');
+      drawText(ctx, 'A GAME BY NEWBIE-1010', W / 2, 110, '#ef7d57', 1, 'center', '#1a1c2c');
       if (G.timer <= 0 && blink(2)) drawText(ctx, 'CLICK OR PRESS ENTER FOR MENU', W / 2, 124, '#a7f070', 1, 'center', '#1a1c2c');
     }
   }

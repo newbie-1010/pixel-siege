@@ -1,3 +1,4 @@
+/* Pixel Siege (c) 2026 newbie-1010. All rights reserved. */
 html, body {
   height: 100%;
   margin: 0;
@@ -16,4 +17,23 @@ canvas {
   image-rendering: pixelated;
   cursor: none; /* the game draws its own crosshair */
   background: #1a1c2c;
+}
+
+/* Shown only on touch-first devices, since the game needs a keyboard and mouse. */
+#touch-note {
+  display: none;
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  padding: 10px 12px;
+  border: 2px solid #ffcd75;
+  background: #1a1c2c;
+  color: #f4f4f4;
+  font: 14px/1.4 monospace;
+  text-align: center;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  #touch-note { display: block; }
 }

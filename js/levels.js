@@ -1,3 +1,4 @@
+// Pixel Siege (c) 2026 newbie-1010. All rights reserved.
 // Level table and the floor painter for each level's theme.
 //
 // kills:    enemies to defeat to clear the level

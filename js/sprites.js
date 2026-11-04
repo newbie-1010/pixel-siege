@@ -1,3 +1,4 @@
+// Pixel Siege (c) 2026 newbie-1010. All rights reserved.
 // Pixel-art sprites and the 5x5 pixel font.
 // Every sprite is a grid of characters. Each character maps to a palette color,
 // and '.' (or any character missing from the palette) is transparent.

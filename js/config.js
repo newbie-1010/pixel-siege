@@ -1,4 +1,8 @@
+// Pixel Siege (c) 2026 newbie-1010. All rights reserved.
 // Shared constants and tiny helpers used by every other script.
+
+// Release version, shown on the menu. Bump it for every published build.
+const VERSION = '1.0.0';
 
 // Internal resolution. The canvas is scaled up by whole-number steps in game.js.
 const W = 320;

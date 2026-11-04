@@ -1,3 +1,4 @@
+// Pixel Siege (c) 2026 newbie-1010. All rights reserved.
 // Keyboard and mouse state.
 // keys: codes held right now. pressed: codes that went down since the last game step.
 // Mouse coordinates are converted to game pixels (0..W, 0..H) using the canvas's on-screen size.

@@ -1,3 +1,4 @@
+// Pixel Siege (c) 2026 newbie-1010. All rights reserved.
 // Retro sound effects generated with the Web Audio API (no audio files).
 // Browsers only allow sound after the player interacts, so init() runs on the
 // first key press or click.

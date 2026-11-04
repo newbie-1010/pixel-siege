@@ -1,3 +1,4 @@
+// Pixel Siege (c) 2026 newbie-1010. All rights reserved.
 // Player, enemies, bullets, particles, score popups and heart pickups.
 
 const ENEMY_DEFS = {
